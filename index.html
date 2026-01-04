@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Teacher</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+  text-align:center;
+  margin:0;
+  padding:0;
+}
+
+h1{
+  margin-top:20px;
+}
+
+.card{
+  background:white;
+  max-width:700px;
+  margin:30px auto;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+p{
+  font-size:18px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.gallery img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+  border:4px solid white;
+}
+
+.gallery img:hover{
+  transform:scale(1.08);
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* POPUP */
+.popup{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+}
+
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  margin-top:5%;
+  border-radius:10px;
+}
+
+.popup span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Messages Section */
+.messages{
+  max-width:800px;
+  margin:40px auto;
+  text-align:left;
+  background: rgba(255,255,255,0.9);
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.messages h2{
+  text-align:center;
+}
+
+.messages ul{
+  list-style:none;
+  padding:0;
+}
+
+.messages li{
+  margin:10px 0;
+  font-size:17px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Audio -->
+<audio autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Heading Card -->
+<div class="card">
+  <h1>🎉 Happy Birthday Dear Teacher 🎉</h1>
+  <p>
+    Thank you for being our guide, mentor and inspiration ❤️ <br>
+    This small website is made with lots of love by your students.
+  </p>
+</div>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="images/pic1.jpg" onclick="openPopup(this.src)">
+  <img src="images/pic2.jpg" onclick="openPopup(this.src)">
+  <img src="images/pic3.jpg" onclick="openPopup(this.src)">
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <span onclick="closePopup()">✖</span>
+  <img id="popupImg">
+</div>
+
+<!-- Messages -->
+<div class="messages">
+  <h2>💌 Birthday Wishes from Students</h2>
+  <ul>
+    <li>“Thank you for believing in us even when we didn’t believe in ourselves.”</li>
+    <li>“You made learning easy and life meaningful.”</li>
+    <li>“Best teacher anyone could ever have! 🌸”</li>
+    <li>“We will always remember your teachings.”</li>
+  </ul>
+</div>
+
+<script>
+// Popup Functions
+function openPopup(src){
+  document.getElementById("popup").style.display="block";
+  document.getElementById("popupImg").src=src;
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
